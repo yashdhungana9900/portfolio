@@ -1,5 +1,5 @@
 // Set NEXT_PUBLIC_SITE_URL in Vercel (Project Settings > Environment Variables)
-// to your real domain, e.g. https://yash-sharma.vercel.app
+// to your real domain, e.g. https://yash.vercel.app
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-two-pi-s00523mp6l.vercel.app";
 
