@@ -1,4 +1,4 @@
-const EMAIL = "yashdhungana9900@gmail.com"; // change this
+const EMAIL = "yashdhungana9900@gmail.com";
 
 const links = [
   { label: "GitHub", href: "https://github.com/yashdhungana9900" },
@@ -17,12 +17,22 @@ export default function Contact() {
           I reply to every email, usually within a day.
         </p>
 
-        <div className="mt-9 flex flex-wrap items-center gap-6">
+        <p className="mt-6 select-all text-xl font-semibold">{EMAIL}</p>
+
+        <div className="relative z-10 mt-6 flex flex-wrap items-center gap-6">
           <a
-            href={`mailto:${EMAIL}`}
+            href={`https://mail.google.com/mail/?view=cm&to=${EMAIL}`}
+            target="_blank"
+            rel="noreferrer"
             className="btn bg-white text-ink hover:bg-soft"
           >
             Email me
+          </a>
+          <a
+            href={`mailto:${EMAIL}`}
+            className="text-sm font-semibold text-white/80 underline-offset-4 hover:text-white hover:underline"
+          >
+            Open in mail app
           </a>
           {links.map((l) => (
             <a
