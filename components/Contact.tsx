@@ -1,8 +1,8 @@
 const EMAIL = "your-email@example.com"; // change this
 
 const links = [
-  { label: "GitHub", href: "https://github.com/your-username" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/your-username" },
+  { label: "GitHub", href: "https://github.com/yashdhungana9900" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/yashdhungana/" },
 ];
 
 export default function Contact() {
