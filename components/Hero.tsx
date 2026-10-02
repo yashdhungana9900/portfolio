@@ -34,7 +34,7 @@ export default function Hero() {
           {/* The h1 is NOT animated on purpose: it is the biggest element on
               screen, so hiding it until JS loads would hurt the LCP score. */}
           <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] sm:text-7xl">
-            Yash Sharma builds full-stack web apps.
+            Yashraj builds full-stack web apps.
           </h1>
 
           <m.p

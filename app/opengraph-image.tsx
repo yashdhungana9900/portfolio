@@ -19,7 +19,7 @@ export default function OpengraphImage() {
           padding: 80,
         }}
       >
-        <div style={{ fontSize: 92, fontWeight: 800 }}>Yash Sharma</div>
+        <div style={{ fontSize: 92, fontWeight: 800 }}>Yashraj Dhungana</div>
         <div style={{ fontSize: 40, marginTop: 20, color: "#9FB3FF" }}>
           Full-Stack Developer
         </div>
