@@ -1,4 +1,4 @@
-const EMAIL = "your-email@example.com"; // change this
+const EMAIL = "yashdhungana9900@gmail.com"; // change this
 
 const links = [
   { label: "GitHub", href: "https://github.com/yashdhungana9900" },
