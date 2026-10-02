@@ -18,10 +18,10 @@ const body = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: SITE.title, template: "%s | Yash Sharma" },
+  title: { default: SITE.title, template: "%s | Yashraj Dhungana" },
   description: SITE.description,
   keywords: [
-    "Yash Sharma",
+    "Yashraj Dhungana",
     "full-stack developer",
     "software engineer",
     "Next.js",
