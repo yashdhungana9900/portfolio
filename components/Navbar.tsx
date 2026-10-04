@@ -1,3 +1,5 @@
+import ThemeSwitcher from "./ThemeSwitcher";
+
 const links = [
   { href: "#projects", label: "Projects" },
   { href: "#about", label: "About" },
@@ -15,9 +17,9 @@ export default function Navbar() {
           Yashraj Dhungana
         </a>
 
-        <ul className="flex items-center gap-6 text-sm font-medium text-muted sm:gap-8">
+        <ul className="flex items-center gap-4 text-sm font-medium text-muted sm:gap-8">
           {links.map((l) => (
-            <li key={l.href}>
+            <li key={l.href} className="hidden sm:block">
               <a href={l.href} className="transition-colors hover:text-brand">
                 {l.label}
               </a>
@@ -30,6 +32,9 @@ export default function Navbar() {
             >
               Resume
             </a>
+          </li>
+          <li>
+            <ThemeSwitcher />
           </li>
         </ul>
       </nav>

@@ -3,6 +3,47 @@
 @tailwind utilities;
 
 @layer base {
+  /* Mint (default) */
+  :root,
+  [data-theme="mint"] {
+    --paper: 10 10 10;
+    --surface: 17 17 17;
+    --ink: 242 247 245;
+    --muted: 154 165 160;
+    --line: 31 42 38;
+    --brand: 142 229 192;
+    --soft: 18 32 27;
+    --ok: 52 211 153;
+    --onbrand: 10 10 10;
+    color-scheme: dark;
+  }
+
+  [data-theme="violet"] {
+    --paper: 12 10 16;
+    --surface: 20 17 26;
+    --ink: 244 242 250;
+    --muted: 160 155 175;
+    --line: 38 33 50;
+    --brand: 183 156 255;
+    --soft: 28 22 42;
+    --ok: 52 211 153;
+    --onbrand: 12 10 16;
+    color-scheme: dark;
+  }
+
+  [data-theme="light"] {
+    --paper: 246 250 247;
+    --surface: 255 255 255;
+    --ink: 15 30 22;
+    --muted: 90 105 97;
+    --line: 217 229 221;
+    --brand: 15 138 92;
+    --soft: 223 242 231;
+    --ok: 15 159 110;
+    --onbrand: 255 255 255;
+    color-scheme: light;
+  }
+
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem; /* so sticky navbar doesn't cover section titles */
@@ -19,14 +60,14 @@
   }
 
   :focus-visible {
-    outline: 2px solid #2b50f5;
+    outline: 2px solid rgb(var(--brand));
     outline-offset: 3px;
     border-radius: 4px;
   }
 
   ::selection {
-    background: #2b50f5;
-    color: #fff;
+    background: rgb(var(--brand));
+    color: rgb(var(--onbrand));
   }
 }
 
@@ -39,10 +80,10 @@
     @apply inline-flex items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold transition-colors;
   }
   .btn-primary {
-    @apply btn bg-brand text-white hover:bg-[#1F3FD1];
+    @apply btn bg-brand text-onbrand hover:opacity-90;
   }
   .btn-outline {
-    @apply btn border border-ink/20 text-ink hover:border-ink hover:bg-white;
+    @apply btn border border-ink/20 text-ink hover:border-brand hover:bg-surface hover:text-brand;
   }
 
   .section-title {

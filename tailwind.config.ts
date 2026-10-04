@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+const c = (name: string) => `rgb(var(--${name}) / <alpha-value>)`;
+
 const config: Config = {
   content: [
     "./app/**/*.{ts,tsx}",
@@ -8,13 +10,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        paper: "#F4F6FA",   // page background
-        ink: "#0E1A2B",     // text + dark section
-        muted: "#5B6779",   // secondary text
-        line: "#D9DFE8",    // borders
-        brand: "#2B50F5",   // links, buttons
-        soft: "#E4EAFF",    // light brand tint
-        ok: "#0F9F6E",      // "open to work" dot
+        paper: c("paper"),
+        surface: c("surface"),
+        ink: c("ink"),
+        muted: c("muted"),
+        line: c("line"),
+        brand: c("brand"),
+        soft: c("soft"),
+        ok: c("ok"),
+        onbrand: c("onbrand"),
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
