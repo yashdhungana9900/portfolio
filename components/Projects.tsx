@@ -1,37 +1,40 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
+import { SITE_URL } from "@/lib/site";
 
 type Project = {
   title: string;
   description: string;
   stack: string[];
+  image?: string; // e.g. "/projects/habit-tracker.webp" (file in public/projects)
   code?: string; // GitHub URL
   live?: string; // deployed URL
 };
 
-// Edit this list. Make "stack" match what you actually used.
+// Only add code/live when the link really works. Empty = button is hidden.
 const projects: Project[] = [
   {
-    title: "Habit Tracker",
+    title: "Smart Campus Systems",
     description:
-      "Create habits, check them off daily, and watch your streak grow. Streaks reset when a day is missed.",
-    stack: ["Next.js", "TypeScript", "PostgreSQL"],
-    code: "https://github.com/your-username/habit-tracker",
-    live: "https://your-habit-tracker.vercel.app",
+      "Developed a Django-based campus management platform with student authentication, complaint submission, category-based issue tracking, and administrative management. Implemented relational data models using Django ORM for users, complaints, notifications, status tracking, and timestamps, with Django Admin for centralized administration.",
+    stack: ["Python", "Django", "JavaScript", "SQL"],
+    // code: "https://github.com/yashdhungana9900/YOUR-REPO",
+    // live: "https://YOUR-APP-URL",
   },
   {
-    title: "DSA Visualizer",
+    title: "Blood Pressure Prediction Using Machine Learning",
     description:
-      "Watch sorting and searching algorithms run step by step, with speed control so you can follow each comparison.",
-    stack: ["React", "TypeScript", "Tailwind CSS"],
-    code: "https://github.com/your-username/dsa-visualizer",
-    live: "https://your-dsa-visualizer.vercel.app",
+      "Developed a Flask-based machine learning web application that predicts blood pressure from user inputs including age, weight, height, and heart rate. Built the prediction pipeline using Python, scikit-learn, NumPy, Pandas, and Joblib, with a trained model serialized as bp_model.pkl for inference.",
+    stack: ["Python", "Flask", "scikit-learn", "Pandas"],
+    // code: "https://github.com/yashdhungana9900/YOUR-REPO",
   },
   {
     title: "Portfolio",
     description:
-      "This site. Built with the Next.js App Router, typed components and Tailwind CSS.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    code: "https://github.com/your-username/portfolio",
+      "This site. Built with the Next.js App Router, typed components and Tailwind CSS, scoring 99 on PageSpeed Insights (mobile).",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    code: "https://github.com/yashdhungana9900/portfolio",
+    live: "https://portfolio-two-pi-s00523mp6l.vercel.app",
   },
 ];
 
@@ -39,51 +42,73 @@ export default function Projects() {
   return (
     <section id="projects" className="border-t border-line">
       <div className="container-page py-20">
-        <h2 className="section-title">Projects</h2>
+        <h2 className="section-title">
+          Featured <span className="text-brand">Projects</span>
+        </h2>
 
-        <ul className="mt-10 divide-y divide-line border-y border-line">
+        <ul className="mt-10 grid gap-8">
           {projects.map((p) => (
             <Reveal
               as="li"
               key={p.title}
-              className="grid gap-4 py-8 md:grid-cols-[1fr_1.6fr_auto] md:gap-10"
+              className="overflow-hidden rounded-2xl border border-line bg-surface md:grid md:grid-cols-[1.1fr_1fr]"
             >
-              <h3 className="text-2xl font-bold">{p.title}</h3>
+              <div className="relative aspect-[16/10] bg-soft">
+                {p.image ? (
+                  <Image
+                    src={p.image}
+                    alt={`${p.title} screenshot`}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover object-top"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center font-display text-7xl font-extrabold text-brand/40">
+                    {p.title[0]}
+                  </div>
+                )}
+              </div>
 
-              <div>
-                <p className="leading-relaxed text-muted">{p.description}</p>
-                <ul className="mt-4 flex flex-wrap gap-2">
+              <div className="flex flex-col justify-center p-6 md:p-8">
+                <h3 className="text-2xl font-bold sm:text-3xl">{p.title}</h3>
+                <p className="mt-3 leading-relaxed text-muted">
+                  {p.description}
+                </p>
+
+                <ul className="mt-5 flex flex-wrap gap-2">
                   {p.stack.map((s) => (
                     <li
                       key={s}
-                      className="rounded-md bg-soft px-2.5 py-1 text-xs font-medium text-brand"
+                      className="rounded-full border border-line px-3 py-1 text-sm text-ink"
                     >
                       {s}
                     </li>
                   ))}
                 </ul>
-              </div>
 
-              <div className="flex gap-5 text-sm font-semibold md:flex-col md:gap-2 md:text-right">
-                {p.live && (
-                  <a
-                    href={p.live}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-brand underline-offset-4 hover:underline"
-                  >
-                    Live demo
-                  </a>
-                )}
-                {p.code && (
-                  <a
-                    href={p.code}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-ink underline-offset-4 hover:underline"
-                  >
-                    Source code
-                  </a>
+                {(p.code || p.live) && (
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    {p.code && (
+                      <a
+                        href={p.code}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn-outline"
+                      >
+                        Code
+                      </a>
+                    )}
+                    {p.live && (
+                      <a
+                        href={p.live}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn-primary"
+                      >
+                        View live
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
             </Reveal>

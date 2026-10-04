@@ -1,50 +1,50 @@
-const EMAIL = "yashdhungana9900@gmail.com";
+import { SITE } from "@/lib/site";
 
-const links = [
-  { label: "GitHub", href: "https://github.com/yashdhungana9900" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/yashdhungana/" },
-];
+const EMAIL = "yashdhungana9900@gmail.com";
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-ink text-white">
+    <section id="contact" className="border-t border-line bg-surface">
       <div className="container-page py-24">
         <h2 className="max-w-2xl text-4xl font-extrabold leading-tight sm:text-6xl">
-          Hiring for a software role? Let&apos;s talk.
+          Hiring for a software role?{" "}
+          <span className="text-brand">Let&apos;s talk.</span>
         </h2>
 
-        <p className="mt-5 max-w-lg text-lg text-white/70">
+        <p className="mt-5 max-w-lg text-lg text-muted">
           I reply to every email, usually within a day.
         </p>
 
         <p className="mt-6 select-all text-xl font-semibold">{EMAIL}</p>
 
-        <div className="relative z-10 mt-6 flex flex-wrap items-center gap-6">
+        <div className="relative z-10 mt-6 flex flex-wrap items-center gap-3">
           <a
             href={`https://mail.google.com/mail/?view=cm&to=${EMAIL}`}
             target="_blank"
             rel="noreferrer"
-            className="btn bg-white text-ink hover:bg-soft"
+            className="btn-primary"
           >
             Email me
           </a>
-          <a
-            href={`mailto:${EMAIL}`}
-            className="text-sm font-semibold text-white/80 underline-offset-4 hover:text-white hover:underline"
-          >
+          <a href={`mailto:${EMAIL}`} className="btn-outline">
             Open in mail app
           </a>
-          {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm font-semibold text-white/80 underline-offset-4 hover:text-white hover:underline"
-            >
-              {l.label}
-            </a>
-          ))}
+          <a
+            href={SITE.github}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-outline"
+          >
+            GitHub
+          </a>
+          <a
+            href={SITE.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-outline"
+          >
+            LinkedIn
+          </a>
         </div>
       </div>
     </section>

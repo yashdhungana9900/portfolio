@@ -1,10 +1,11 @@
 "use client";
 
 import { m, type Variants } from "framer-motion";
+import { SITE } from "@/lib/site";
 
 const builds = [
-  { name: "Habit Tracker", note: "Daily habits with streaks" },
-  { name: "DSA Visualizer", note: "Step-by-step algorithm animations" },
+  { name: "Smart Campus Systems", note: "Django complaint management platform" },
+  { name: "Blood Pressure Prediction", note: "Flask and scikit-learn ML app" },
   { name: "This portfolio", note: "Next.js and Tailwind" },
 ];
 
@@ -25,7 +26,7 @@ export default function Hero() {
         <m.div variants={container} initial="hidden" animate="show">
           <m.p
             variants={item}
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5 text-sm text-muted"
+            className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1.5 text-sm text-muted"
           >
             <span className="h-2 w-2 rounded-full bg-ok" aria-hidden />
             Open to SDE roles, graduating 2027
@@ -34,16 +35,17 @@ export default function Hero() {
           {/* The h1 is NOT animated on purpose: it is the biggest element on
               screen, so hiding it until JS loads would hurt the LCP score. */}
           <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] sm:text-7xl">
-            Yashraj builds full-stack web apps.
+            <span className="text-brand">Yashraj</span> builds full-stack web
+            apps.
           </h1>
 
           <m.p
             variants={item}
             className="mt-6 max-w-xl text-lg leading-relaxed text-muted"
           >
-            Final-year engineering student. I work with Next.js, TypeScript,
-            Node.js and PostgreSQL, and I&apos;m looking for a software
-            engineer role at a product company.
+            Final-year engineering student. I work with Python, Django, Flask
+            and Next.js, and I&apos;m looking for a software engineer role at a
+            product company.
           </m.p>
 
           <m.div variants={item} className="mt-9 flex flex-wrap gap-3">
@@ -62,11 +64,33 @@ export default function Hero() {
               Download resume
             </m.a>
           </m.div>
+
+          <m.div
+            variants={item}
+            className="mt-6 flex gap-5 text-sm font-semibold"
+          >
+            <a
+              href={SITE.github}
+              target="_blank"
+              rel="noreferrer"
+              className="text-muted transition-colors hover:text-brand"
+            >
+              GitHub
+            </a>
+            <a
+              href={SITE.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="text-muted transition-colors hover:text-brand"
+            >
+              LinkedIn
+            </a>
+          </m.div>
         </m.div>
 
         <m.aside
           aria-label="Things I've built"
-          className="rounded-2xl border border-line bg-white p-6 shadow-[0_1px_0_#D9DFE8]"
+          className="rounded-2xl border border-line bg-surface p-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
