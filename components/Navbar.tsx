@@ -28,6 +28,8 @@ export default function Navbar() {
           <li>
             <a
               href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="rounded-lg border border-ink/20 px-3 py-1.5 text-ink transition-colors hover:border-brand hover:bg-surface hover:text-brand"
             >
               Resume

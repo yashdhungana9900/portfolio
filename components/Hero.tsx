@@ -42,8 +42,8 @@ export default function Hero() {
             variants={item}
             className="mt-6 max-w-xl text-lg leading-relaxed text-muted"
           >
-            Final-year engineering student. I work with Python, Django, Flask
-            and Next.js, and I&apos;m looking for a software engineer role at a
+            Final-year engineering student. I work with Python, Django and
+            Next.js, and I&apos;m looking for a software engineer role at a
             product company.
           </m.p>
 
@@ -57,10 +57,12 @@ export default function Hero() {
             </m.a>
             <m.a
               href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="btn-outline"
               whileTap={{ scale: 0.97 }}
             >
-              Download resume
+              View resume
             </m.a>
           </m.div>
 
