@@ -100,3 +100,10 @@
     animation: none !important;
   }
 }
+
+
+/* Hide the system cursor only while the custom arrow is running (mouse devices) */
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
+}
