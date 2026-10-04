@@ -18,16 +18,11 @@ const projects: Project[] = [
     description:
       "Developed a Django-based campus management platform with student authentication, complaint submission, category-based issue tracking, and administrative management. Implemented relational data models using Django ORM for users, complaints, notifications, status tracking, and timestamps, with Django Admin for centralized administration.",
     stack: ["Python", "Django", "JavaScript", "SQL"],
+    image: "/projects/smart-campus.webp",
     // code: "https://github.com/yashdhungana9900/YOUR-REPO",
     // live: "https://YOUR-APP-URL",
   },
-  {
-    title: "Blood Pressure Prediction Using Machine Learning",
-    description:
-      "Developed a Flask-based machine learning web application that predicts blood pressure from user inputs including age, weight, height, and heart rate. Built the prediction pipeline using Python, scikit-learn, NumPy, Pandas, and Joblib, with a trained model serialized as bp_model.pkl for inference.",
-    stack: ["Python", "Flask", "scikit-learn", "Pandas"],
-    // code: "https://github.com/yashdhungana9900/YOUR-REPO",
-  },
+ 
   {
     title: "Portfolio",
     description:
@@ -35,6 +30,7 @@ const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     code: "https://github.com/yashdhungana9900/portfolio",
     live: "https://portfolio-two-pi-s00523mp6l.vercel.app",
+    image: "/projects/portfolio.webp",
   },
 ];
 

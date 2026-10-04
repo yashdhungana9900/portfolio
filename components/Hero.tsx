@@ -5,7 +5,6 @@ import { SITE } from "@/lib/site";
 
 const builds = [
   { name: "Smart Campus Systems", note: "Django complaint management platform" },
-  { name: "Blood Pressure Prediction", note: "Flask and scikit-learn ML app" },
   { name: "This portfolio", note: "Next.js and Tailwind" },
 ];
 
