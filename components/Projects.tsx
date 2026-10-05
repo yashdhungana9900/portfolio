@@ -19,8 +19,8 @@ const projects: Project[] = [
       "Developed a Django-based campus management platform with student authentication, complaint submission, category-based issue tracking, and administrative management. Implemented relational data models using Django ORM for users, complaints, notifications, status tracking, and timestamps, with Django Admin for centralized administration.",
     stack: ["Python", "Django", "JavaScript", "SQL"],
     image: "/projects/smart-campus.webp",
-    // code: "https://github.com/yashdhungana9900/YOUR-REPO",
-    // live: "https://YOUR-APP-URL",
+    code: "https://github.com/yashdhungana9900/smart-campus-system",
+    live: "https://smart-campus-system-3p1y.onrender.com/",
   },
  
   {
